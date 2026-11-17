@@ -18,7 +18,7 @@ jobs:
         run: |
           set -ex
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
-          curl -sSL -A "$UA" -H "Accept: application/pdf,*/*" -o "$PDF" -w "HTTP %{http_code} %{content_type} %{size_download}\n" "$SRC"
+          echo "PDF subido manualmente al repo"
           ls -l "$PDF"
           if ! head -c 5 "$PDF" | grep -q '%PDF'; then head -c 600 "$PDF"; exit 1; fi
           B=https://raw.githubusercontent.com/gonzalomendo-commits/programa-pp-2026/main
